@@ -22,18 +22,24 @@ const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
     list: [],
+    isLoading: false,
+    error: null,
   },
-  reducers: {
-    setCategories: (state, action) => {
-      state.list = action.payload;
-    },
-    addCategory: (state, action) => {
-      state.list.push(action.payload);
-    },
-    removeCategory: (state, action) => {
-      state.list = state.list.filter(
-        (category) => category.id !== action.payload.id
-      );
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCategories.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(getCategories.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.list = action.payload;
+      })
+      .addCase(getCategories.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
+
+export default categoriesSlice.reducer;

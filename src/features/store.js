@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 export const store = configureStore({
   reducer: {
     // Add your reducers here
-    categories: "cat",
+    categories: "categoriesSlice", // Import and use the categories slice reducer
     // categories: (state = [], action) => state, // Example placeholder reducer
     // products: (state = [], action) => state, // Example placeholder reducer
     // cart: (state = [], action) => state, // Example placeholder reducer
