@@ -10,9 +10,10 @@ export const getCategories = createAsyncThunk(
       if (!response.ok) {
         throw new Error("Failed to fetch categories");
       }
-      const data = await response.json();
+      const data = response.data;
       return data;
     } catch (error) {
+      console.log(error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -31,13 +32,13 @@ const categoriesSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(getCategories.fulfilled, (state, action) => {
+      .addCase(getCategories.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.list = action.payload;
+        state.list = payload;
       })
-      .addCase(getCategories.rejected, (state, action) => {
+      .addCase(getCategories.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.error = payload;
       });
   },
 });
