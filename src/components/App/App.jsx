@@ -5,6 +5,7 @@ import AppRoutes from "../Routes/Routes";
 import Sidebar from "../Sidebar/Sidebar";
 import { getCategories } from "../../features/categories/categories.Slice";
 import { useEffect } from "react";
+import classes from "../../styles/App.module.css";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,10 +15,10 @@ const App = () => {
     // return () => {};
   }, [dispatch]);
   return (
-    <div className="app">
+    <div className={classes.app}>
       <Header />
 
-      <div className="container">
+      <div className={classes.container}>
         <Sidebar />
         <AppRoutes />
       </div>
