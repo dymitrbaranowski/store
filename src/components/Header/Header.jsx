@@ -7,7 +7,7 @@ import { IoIosHeart } from "react-icons/io";
 import { FaShoppingBag } from "react-icons/fa";
 import { PiCat } from "react-icons/pi";
 import stuff from "../../images/stuff.svg"; // Assuming you have an Artboard image
-import styles from "../../styles/Header.module.css"; // Assuming you have a CSS file for styling
+import styles from "./Header.module.css"; // Assuming you have a CSS file for styling
 
 const Header = () => {
   return (

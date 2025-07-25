@@ -5,7 +5,7 @@ import AppRoutes from "../Routes/Routes";
 import Sidebar from "../Sidebar/Sidebar";
 import { getCategories } from "../../features/categories/categories.Slice";
 import { useEffect } from "react";
-import styles from "../../styles/App.module.css";
+import styles from "./App.module.css";
 
 const App = () => {
   const dispatch = useDispatch();

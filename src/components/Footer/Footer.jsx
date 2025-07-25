@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "../../styles/Footer.module.css"; // Assuming you have a CSS file for styling
+import styles from "./Footer.module.css"; // Assuming you have a CSS file for styling
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes"; // Assuming you have a routes file for navigation
-import LOGO from "../../images/logo.svg"; // Assuming you have a logo image in your assets folder
 import { GrInstagram } from "react-icons/gr";
 import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import stuff from "../../images/stuff.svg";
 
 const Footer = () => {
   return (
@@ -14,12 +14,11 @@ const Footer = () => {
       <div className={styles.LOGO}>
         <Link to={ROUTES.HOME} className={styles.logoLink}>
           <img
-            src={LOGO}
+            src={stuff}
             width={24}
             alt="Store Logo"
             className={styles.logoImage}
           />
-          <span className={styles.logoText}>Store</span>
         </Link>
         <div className={styles.rights}>
           All rights reserved. 2023
