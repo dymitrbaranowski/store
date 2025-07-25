@@ -7,33 +7,33 @@ import { IoIosHeart } from "react-icons/io";
 import { FaShoppingBag } from "react-icons/fa";
 import { PiCat } from "react-icons/pi";
 import stuff from "../../images/stuff.svg"; // Assuming you have an Artboard image
-import classes from "../../styles/Header.module.css"; // Assuming you have a CSS file for styling
+import styles from "../../styles/Header.module.css"; // Assuming you have a CSS file for styling
 
 const Header = () => {
   return (
-    <div className={classes.header}>
-      <div className={classes.logo}>
+    <div className={styles.header}>
+      <div className={styles.logo}>
         {" "}
-        <Link to={ROUTES.HOME} className={classes.logoLink}>
-          <h1 className={classes.logoText}>
+        <Link to={ROUTES.HOME} className={styles.logoLink}>
+          <h1 className={styles.logoText}>
             <img src={stuff} alt="Logo" />
           </h1>
           <PiCat />
         </Link>
       </div>
-      <div className={classes.info}>
-        <div className={classes.user}>
+      <div className={styles.info}>
+        <div className={styles.user}>
           <div
-            className={classes.avatar}
+            className={styles.avatar}
             style={{ backgroundImage: `url(${AVATAR})` }}
           />
-          <div className={classes.username}>Guest</div>
+          <div className={styles.username}>Guest</div>
         </div>
-        <form className={classes.form}>
-          <div className={classes.icon}>
-            <FaSearch className={classes.searchIcon} />
+        <form className={styles.form}>
+          <div className={styles.icon}>
+            <FaSearch className={styles.searchIcon} />
           </div>
-          <div className={classes.input}>
+          <div className={styles.input}>
             <input
               type="search"
               name="search"
@@ -41,18 +41,18 @@ const Header = () => {
               autoComplete="off"
               onChange={() => {}}
               value={""}
-              className={classes.searchInput}
+              className={styles.searchInput}
             />
           </div>
-          {false && <div className={classes.box}></div>}
+          {false && <div className={styles.box}></div>}
         </form>
-        <div className={classes.account}>
-          <Link to={ROUTES.HOME} className={classes.accountLink}>
-            <IoIosHeart className={classes.accountIcon} />
+        <div className={styles.account}>
+          <Link to={ROUTES.HOME} className={styles.accountLink}>
+            <IoIosHeart className={styles.accountIcon} />
           </Link>
-          <Link to={ROUTES.CART} className={classes.cart}>
-            <FaShoppingBag className={classes.icon_cart} />
-            <span className={classes.cartCount}>0</span>
+          <Link to={ROUTES.CART} className={styles.cart}>
+            <FaShoppingBag className={styles.icon_cart} />
+            <span className={styles.cartCount}>0</span>
           </Link>
         </div>
       </div>
